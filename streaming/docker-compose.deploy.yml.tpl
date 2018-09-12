@@ -1,7 +1,7 @@
 version: '3.0'
 services:
   augdiff-stream:
-    image: ${AUGDIFF_STREAM_REPO}:latest
+    image: ${STREAM_REPO}:latest
     command: >
       /spark/bin/spark-submit --class osmesa.analytics.oneoffs.ChangeStreamProcessor /opt/osmesa-analytics.jar
       --augmented-diff-source ${AUGDIFF_SOURCE}
@@ -22,7 +22,7 @@ services:
         awslogs-region: ${AWS_REGION}
         awslogs-stream-prefix: augdiff
   changeset-stream:
-    image: ${CHANGESET_STREAM_REPO}:latest
+    image: ${STREAM_REPO}:latest
     command: >
       /spark/bin/spark-submit --class osmesa.analytics.oneoffs.ChangeStreamProcessor /opt/osmesa-analytics.jar
       --change-source https://planet.osm.org/replication/minute/
