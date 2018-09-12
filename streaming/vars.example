@@ -1,0 +1,7 @@
+# Container Repos
+augdiffStreamRepo=osm-analytics
+changesetStreamRepo=osm-analytics
+
+# AWS
+logGroup=osm-analytics
+awsRegion=us-east-1
